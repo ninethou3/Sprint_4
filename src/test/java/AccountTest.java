@@ -26,6 +26,7 @@ public class AccountTest  {
                 {"Пе",false},
                 {"", false},
                 {"    ", false},
+                {null, false},
                 {"Петр Первый", true},
                 {"Петр ПервыйВторойТ", true},
                 {"Петр ПервыйВторойТр", true},
