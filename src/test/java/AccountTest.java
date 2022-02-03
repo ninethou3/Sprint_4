@@ -40,7 +40,7 @@ public class AccountTest  {
     @Description("Проверка метода на КЭ и ГЗ")
     public void nameValidationTest() {
         Account account = new Account(name);
-        boolean actual = account.checkNameToEmboss();
+        boolean actual = account.checkNameToEmbossRegular(name);
         assertEquals(expected, actual);
     }
 }

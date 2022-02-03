@@ -5,7 +5,7 @@ public class Praktikum {
         String name = "Петр Первый";
 
         Account account = new Account(name);
-        account.checkNameToEmboss();
+        account.checkNameToEmbossRegular(name);
     }
 
 }

@@ -1,5 +1,8 @@
 import io.qameta.allure.Step;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class Account {
 
     private final String name;
@@ -39,6 +42,16 @@ public class Account {
         }
         System.out.println("Подходящее имя.");
         return true;
+    }
+
+    private static final String PATTERN_NAME = "(?=.{3,19}$)[а-яА-Яa-zA-Z]+\\s{1}[а-яА-Яa-zA-Z]+";
+
+    private static final Pattern pattern_name = Pattern.compile(PATTERN_NAME);
+
+    @Step ("Метод проверки имени через регулярное выражение")
+    public boolean checkNameToEmbossRegular(String name) {
+        Matcher matcher = pattern_name.matcher(name);
+        return matcher.matches();
     }
 
 }
